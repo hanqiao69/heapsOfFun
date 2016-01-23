@@ -11,28 +11,52 @@
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- Text Editor Window -->
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+	function submitform()
+	{
+		document.getElementById("input-text").submit();
+	}
+	</script>
+	<script>
+		function getSelectionText() {
+    var text = "";
+    if (document.getSelection) {
+    	text = document.getSelection();
+    }
+    // if (window.getSelection) {
+    //     text = window.getSelection().toString();
+    // } else if (document.selection && document.selection.type != "Control") {
+    //     text = document.selection.createRange().text;
+    // }
+    if (text != "") {
+    	window.alert(text);
+    }
+    return text;
+}
+	</script>
+
 
 </head>
 
 <body>
-	<h1>Heaps of Fun</h1>
+	<div id="header">
+	<h3>Heaps of Fun</h3>
+</div>
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--6-col" id="left-column">This is where your text go
 			<form id="input-text" onsubmit="submitform()">
 				<div class="mdl-textfield mdl-js-textfield">
-					<textarea class="mdl-textfield__input" type="text" rows= "8" id="sample5" ></textarea>
-					<label class="mdl-textfield__label" for="sample5">Text lines...</label>
+					<textarea class="mdl-textfield__input" type="text" rows= "8" id="sample5">
+					</textarea>
+					<label class="mdl-textfield__label">Text lines...</label>
 				</div><br>
 				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised">Submit</button>
 			</form>
 		</div>
-		<div class="mdl-cell mdl-cell--6-col" id="right-column">This is where we display the outline</div>
+		<div class="mdl-cell mdl-cell--6-col" id="right-column">This is where we display the outline
+		</div>
 	</div>
-	<script type="text/javascript">
-function submitform()
-{
-  document.getElementById("input-text").submit();
-}
-</script>
 </body>
 </html>

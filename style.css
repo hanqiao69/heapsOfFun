@@ -1,15 +1,25 @@
 body {
-
+	font-size: 36px;
 }
 
-h1 {
-	text-indent: 30%;
+h3 {
+	text-align: center;
 }
+
+#header {
+    height:150px;
+    background:#F0F0F0;
+    width:auto;
+    padding-top: 25px;
+    margin-top: 0%;
+}
+
 #left-column {
 /*	width: 40%;
 	padding-right: 50%;*/
 	padding: 20px;
 	background-color: rgba(100, 230, 230, 0.4);
+	border-radius: 15px;
 }
 
 #right-column {
@@ -17,4 +27,5 @@ h1 {
 	padding-left: 50%;*/
 	padding: 20px;
 	background-color: rgba(100, 230, 230, 0.4);
+	border-radius: 15px;
 }
