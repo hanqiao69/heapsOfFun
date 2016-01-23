@@ -57,17 +57,28 @@ function clear() {
 }
 
 function submitText() {
+  // var st = document.getElementById('submitted-text');
   $("#input-text").before("<br>");
 	$textVal = $(".mdl-textfield__input").val();
   $textVal = $textVal.replace("\n", "<br>");
-	$("#input-text").before($textVal);
+  var para = document.createElement("p");
+var node = document.createTextNode($textVal);
+para.setAttribute("id", "yo");
+para.appendChild(node);
+var element = document.getElementById("submitted-text");
+element.appendChild(para);
+  // st.appendChild($textVal);
+	//$("#input-text").before($textVal);
 	// $(".mdl-textfield__input").empty();
   $('#text-box').val('');
   // document.getElementById("text-box").value = '';
 }
 
 function resetText() {
-  $textVal.val('');
+  var element = document.getElementById("yo");
+  console.log(element.innerHTML);
+  element.innerHTML = '';
+  // $textVal.val('');
   $('#text-box').val('');
 }
 
