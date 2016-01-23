@@ -20,25 +20,34 @@
 			new nicEditor().panelInstance('NicEdit');
 		});
 	</script>
+	
 	<script>
 		$(document).ready(function() {
 			clear();
 			enter();
+			tab();
 		});
 	</script>
+	<style>
+		.mdl-textfield {
+			width: 100%;
+		}
+	</style>
 
 </head>
 
 <body>
 	<h1>Heaps of Fun</h1>
 	<div class="mdl-grid">
-		<div class="mdl-cell mdl-cell--6-col" id="left-column">This is where your text go
-			<form id="input-text" onsubmit="submitform()">
+		<div class="mdl-cell mdl-cell--6-col" id="left-column">
+		 	This is where your text goes
+			<form id="input-text" onsubmit="submitText()">
 				<div class="mdl-textfield mdl-js-textfield">
 					<textarea class="mdl-textfield__input" type="text" rows= "8" id="sample5" ></textarea>
 					<label class="mdl-textfield__label" for="sample5">Text lines...</label>
 				</div><br>
-				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised">Submit</button>
+				<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "submitText()" value = "submit">
+				</input>
 			</form>
 		</div>
 		<div class="mdl-cell mdl-cell--6-col" id="right-column">
