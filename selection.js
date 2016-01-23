@@ -23,16 +23,16 @@ function enter() {
 }
 
 function tab() {
-	if ($(".nicEdit-main").is(":focus")) {
+	// if($(".nicEdit-main").is(":focus")) {
 		console.log("yay");
 	  	$(this).keypress(function(e){
 	  		console.log(e.which);
-	      	if(e.which===011){
+	      	if(e.which===96){
 	      		console.log("tab");
-	      		$(".nicEdit-main").append("<ul> </ul>");
+	      		$("li").last().append("<ul> <li></li></ul>");
 	      	}
 	    });
-	}
+	// }
 }
 
 function clear() {
