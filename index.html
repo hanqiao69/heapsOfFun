@@ -10,12 +10,20 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
 	<script src="http://js.nicedit.com/nicEdit-latest.js"></script>
+	<script src="selection.js"></script>
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
 		bkLib.onDomLoaded(function()
 		{
 			new nicEditor().panelInstance('NicEdit');
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			clear();
+			enter();
 		});
 	</script>
 
@@ -35,7 +43,9 @@
 		</div>
 		<div class="mdl-cell mdl-cell--6-col" id="right-column">
 			This is where we display the outline
-			<textarea id = "NicEdit" cols="80" rows="5">Some Sample Text </textarea>
+			<textarea id = "NicEdit" cols="80" rows="5">
+				Some Sample Text 
+			</textarea>
 		</div>
 
 	</div>
