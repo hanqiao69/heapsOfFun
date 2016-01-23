@@ -1,0 +1,17 @@
+body {
+
+}
+
+h1 {
+	text-indent: 30%;
+}
+#left-column {
+	width: 40%;
+	padding-right: 50%;
+	/*background-color: rgba(100, 230, 230, 0.4);*/
+}
+
+#right-column {
+	width: 40%;
+	padding-left: 50%;
+}
