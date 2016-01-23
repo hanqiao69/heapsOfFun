@@ -18,3 +18,7 @@ h1 {
 	padding: 20px;
 	background-color: rgba(100, 230, 230, 0.4);
 }
+
+#NicEdit {
+	width: 380px;
+}
