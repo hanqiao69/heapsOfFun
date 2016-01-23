@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
 	<script src="http://js.nicedit.com/nicEdit-latest.js"></script>
 	<script src="selection.js"></script>
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.cyan-light_blue.min.css" />
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -34,11 +35,9 @@
 		width: 100%;
 	}
 	</style>
-
 </head>
 
 <body>
-
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
 	mdl-layout--fixed-tabs">
 	<header class="mdl-layout__header">
@@ -57,6 +56,9 @@
 		<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
 			<div class="page-content">
 				<div id="bar">
+					<h4> Our App </h4>
+					<p>Descriptions go here</p>
+					<hr>
 					<h4>Our Team</h4>
 					<div class="mdl-grid">
 						<div class="mdl-cell mdl-cell--3-col">
@@ -85,6 +87,7 @@
 					<!-- left column ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 					<div class="mdl-cell mdl-cell--6-col" id="left-column">
 						This is where your text goes
+						<br>
 						<form id="input-text" onsubmit="submitText()">
 							<div class="mdl-textfield mdl-js-textfield">
 								<textarea class="mdl-textfield__input" type="text" rows= "8" id="text-box" ></textarea>
@@ -97,25 +100,23 @@
 				</div>
 				<!-- right column ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 				<div class="mdl-cell mdl-cell--6-col" id="right-column">
-					This is where we display the outline <br>
-					<textarea id = "NicEdit" cols="80" rows="5">
+					This is where we display the outline 
+					<br>
+					<textarea id = "NicEdit" cols="80" rows="15">
 						Some Sample Text 
 					</textarea>
 				</div>
 			</div>
 		</section>
 	</main>
+	<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Heaps Of Fun</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="mailto:hanqiao69@gmail.com">Email Us</a></li>
+    </ul>
+  </div>
+</footer>
 </div>
-
-
-<h1>Heaps of Fun</h1>
-
-</div>
-<script type="text/javascript">
-function submitform()
-{
-	document.getElementById("input-text").submit();
-}
-</script>
 </body>
 </html>

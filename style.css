@@ -8,7 +8,11 @@
 	text-align: center;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: rgba(30, 130, 250, 0.4);
+	background-color: rgba(151, 255, 255, 0.4);
+}
+
+br {
+	line-height: 20px;
 }
 
 h1 {
@@ -18,7 +22,7 @@ h1 {
 /*	width: 40%;
 	padding-right: 50%;*/
 	padding: 20px;
-	background-color: rgba(30, 130, 250, 0.4);
+	background-color: rgba(151, 255, 255, 0.4);
 	border-radius: 20px;
 }
 
@@ -26,10 +30,11 @@ h1 {
 	/*width: 40%;
 	padding-left: 50%;*/
 	padding: 20px;
-	background-color: rgba(30, 130, 250, 0.4);
+	background-color: rgba(151, 255, 255, 0.4);
 	border-radius: 20px;
 }
 
 #NicEdit {
-	width: 380px;
+	width: 100%;
+	padding-left: 20px;
 }

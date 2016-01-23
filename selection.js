@@ -41,8 +41,9 @@ function clear() {
 }
 
 function submitText() {
+  $("#input-text").before("<br>");
 	$textVal = $(".mdl-textfield__input").val();
-	$("#input-text").before("<br>");
+  $textVal = $textVal.replace("\n", "<br>");
 	$("#input-text").before($textVal);
 	// $(".mdl-textfield__input").empty();
   $('#text-box').val('');
