@@ -1,8 +1,8 @@
 /*extracts selected words when you press enter key*/
-function enter() {
+function h_yellow() {
 	$times = 0;
  $(this).keypress(function(e){
-   if(e.which===015){
+   if(e.which===121){ //015 for enter
      $selection = window.getSelection();
      $toAdd = $selection.toString();
      if ($toAdd) {
@@ -17,20 +17,52 @@ function enter() {
       }
       $times = 1;
     }
-    highlight($selection.getRangeAt(0));
+    highlight_yellow($selection.getRangeAt(0));
 
   }
 });
 }
 
-function highlight(selection) {
+function h_green() {
+  $times = 0;
+ $(this).keypress(function(e){
+   if(e.which===103){
+     $selection = window.getSelection();
+     $toAdd = $selection.toString();
+     if ($toAdd) {
+       console.log($toAdd);
+       if ($times === 0) {
+        $(".nicEdit-main").children().remove();
+        $(".nicEdit-main").append("<ul id = \"startList\"> <li>" +$toAdd + "</li></ul>");
+        $(".nicEdit-main").append("<br>");
+      }
+      else {
+        $("#startList").append("<li>" +$toAdd + "</li>");
+      }
+      $times = 1;
+    }
+    highlight_green($selection.getRangeAt(0));
+
+  }
+});
+}
+
+function highlight_yellow(selection) {
 	$newDiv = document.createElement("div");
 	$newDiv.setAttribute(
 		"style",
    "background-color: yellow; display: inline;"
    );
   selection.surroundContents($newDiv);
+}
 
+function highlight_green(selection) {
+  $newDiv = document.createElement("div");
+  $newDiv.setAttribute(
+    "style",
+   "background-color: green; display: inline;"
+   );
+  selection.surroundContents($newDiv);
 }
 
 function tab() {
@@ -77,5 +109,3 @@ function submitText() {
 function resetText() {
   $('#submitted-text').empty();
 }
-
-

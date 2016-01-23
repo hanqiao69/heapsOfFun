@@ -26,9 +26,20 @@
 	<script>
 	$(document).ready(function() {
 		clear();
-		enter();
+		h_yellow();
+		h_green();
 		tab();
 	});
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+    type:     "GET",
+    url:      "https://http://freetexthost.com/r56ct5aw03", // <-- Here
+    dataType: "jsonp",
+    success: function(data){
+        console.log(data);
+    }
+});
 	</script>
 	<style>
 	.mdl-textfield {
@@ -106,18 +117,20 @@
 					<textarea id = "NicEdit" cols="80" rows="15">
 						Some Sample Text 
 					</textarea>
+					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "" value = "save to googledoc">
+					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "" value = "reset">
 				</div>
 			</div>
 		</section>
 	</main>
 	<footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <div class="mdl-logo">Heaps Of Fun</div>
-    <ul class="mdl-mini-footer__link-list">
-      <li><a href="mailto:hanqiao69@gmail.com">Email Us</a></li>
-    </ul>
-  </div>
-</footer>
+		<div class="mdl-mini-footer__left-section">
+			<div class="mdl-logo">Heaps Of Fun</div>
+			<ul class="mdl-mini-footer__link-list">
+				<li><a href="mailto:hanqiao69@gmail.com">Email Us</a></li>
+			</ul>
+		</div>
+	</footer>
 </div>
 </body>
 </html>
