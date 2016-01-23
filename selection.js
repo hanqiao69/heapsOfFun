@@ -1,7 +1,7 @@
 /*extracts selected words when you press enter key*/
 function enter() {
 	$times = 0;
-  $(this).keypress(function(e){
+  	$(this).keypress(function(e){
       	if(e.which===015){
   			$selection = window.getSelection();
       		$toAdd = $selection.toString();
@@ -17,9 +17,20 @@ function enter() {
 	      		}
 	      		$times = 1;
       		}
+      		highlight($selection.getRangeAt(0));
 
       	}
     });
+}
+
+function highlight(selection) {
+	$newDiv = document.createElement("div");
+	$newDiv.setAttribute(
+		"style",
+       "background-color: yellow; display: inline;"
+    );
+    selection.surroundContents($newDiv);
+	
 }
 
 function tab() {
@@ -29,7 +40,12 @@ function tab() {
 	  		console.log(e.which);
 	      	if(e.which===96){
 	      		console.log("tab");
-	      		$("li").last().append("<ul> <li></li></ul>");
+	      		$(".nicEdit-main").find("li").last().append("<ul> <li></li></ul>");
+	      	}
+	      	if(e.which===49){
+	      		console.log("tab");
+	      		$(".nicEdit-main").find("li").last().remove();
+	      		$(".nicEdit-main").find("li").last().append("<li>");
 	      	}
 	    });
 	// }
