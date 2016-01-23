@@ -51,6 +51,7 @@ function submitText() {
 }
 
 function resetText() {
+  $textVal.val('');
   $('#text-box').val('');
 }
 
