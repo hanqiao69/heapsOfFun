@@ -9,14 +9,16 @@ h1 {
 /*	width: 40%;
 	padding-right: 50%;*/
 	padding: 20px;
-	background-color: rgba(100, 230, 230, 0.4);
+	background-color: rgba(30, 130, 250, 0.4);
+	border-radius: 20px;
 }
 
 #right-column {
 	/*width: 40%;
 	padding-left: 50%;*/
 	padding: 20px;
-	background-color: rgba(100, 230, 230, 0.4);
+	background-color: rgba(30, 130, 250, 0.4);
+	border-radius: 20px;
 }
 
 #NicEdit {
