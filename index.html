@@ -16,65 +16,86 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 	<script>
-		bkLib.onDomLoaded(function()
-		{
-			new nicEditor().panelInstance('NicEdit');
-		});
+	bkLib.onDomLoaded(function()
+	{
+		new nicEditor().panelInstance('NicEdit');
+	});
 	</script>
 	
 	<script>
-		$(document).ready(function() {
-			clear();
-			enter();
-			tab();
-		});
+	$(document).ready(function() {
+		clear();
+		enter();
+		tab();
+	});
 	</script>
 	<style>
-		.mdl-textfield {
-			width: 100%;
-		}
+	.mdl-textfield {
+		width: 100%;
+	}
 	</style>
 
 </head>
 
 <body>
-	<h1>Heaps of Fun</h1>
-	<div class="mdl-grid">
-		<div class="mdl-cell mdl-cell--6-col" id="left-column">
-		 	This is where your text goes
-			<form id="input-text" onsubmit="submitText()" >
-				<div class="mdl-textfield mdl-js-textfield">
-					<textarea class="mdl-textfield__input" type="text" rows= "8" id="sample5" ></textarea>
-					<label class="mdl-textfield__label" for="sample5">Text lines...</label>
-				</div><br>
-				<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "submitText()" value = "submit">
-				</input>
-			</form>
-		</div>
-		<div class="mdl-cell mdl-cell--6-col" id="right-column">
-			This is where we display the outline
-			<br>
-			<textarea id = "NicEdit" cols="80" rows="5">
-				Some Sample Text 
-			</textarea>
-			<br>
-			<input type = "button"  class="mdl-button mdl-js-button mdl-button--raised" value = "export to GoogleDocs" 
-			onclick = "createAndSendDocument()"></input>
-			    <div id="authorize-div" style="display: none">
-			      <span>Authorize access to Drive API</span>
-			      <!--Button for the user to click to initiate auth sequence -->
-			      <button id="authorize-button" onclick="handleAuthClick(event)">
-			        Authorize
-			      </button>
-			    </div>
-			    <pre id="output"></pre>
-		</div>
 
-	</div>
-	<script type="text/javascript">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+	mdl-layout--fixed-tabs">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">Heaps of Fun</span>
+		</div>
+		<!-- Tabs -->
+		<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+			<a href="#fixed-tab-1" class="mdl-layout__tab is-active">About</a>
+			<a href="#fixed-tab-2" class="mdl-layout__tab">Try it out</a>
+
+		</div>
+	</header>
+	<main class="mdl-layout__content">
+		<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+			<div class="page-content">
+			</div>
+		</section>
+		<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+			<div class="page-content">
+				<div class="mdl-grid">
+					<!-- left column ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<div class="mdl-cell mdl-cell--6-col" id="left-column">
+						This is where your text goes
+						<form id="input-text" onsubmit="submitText()">
+							<div class="mdl-textfield mdl-js-textfield">
+								<textarea class="mdl-textfield__input" type="text" rows= "8" id="text-box" ></textarea>
+								<label class="mdl-textfield__label" for="sample5">Text lines...</label>
+							</div><br>
+							<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "submitText()" value = "submit">
+							<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "resetText()" value = "reset">
+						</input>
+					</form>
+				</div>
+				<!-- right column ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div class="mdl-cell mdl-cell--6-col" id="right-column">
+					This is where we display the outline <br>
+					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "#" value = " < ">
+					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "#" value = " > ">
+					<textarea id = "NicEdit" cols="80" rows="5">
+						Some Sample Text 
+					</textarea>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+
+<h1>Heaps of Fun</h1>
+
+</div>
+<script type="text/javascript">
 function submitform()
 {
-  document.getElementById("input-text").submit();
+	document.getElementById("input-text").submit();
 }
 </script>
 </body>

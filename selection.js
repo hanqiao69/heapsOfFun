@@ -44,7 +44,13 @@ function submitText() {
 	$textVal = $(".mdl-textfield__input").val();
 	$("#input-text").before("<br>");
 	$("#input-text").before($textVal);
-	$(".mdl-textfield__input").empty();
+	// $(".mdl-textfield__input").empty();
+  $('#text-box').val('');
+  // document.getElementById("text-box").value = '';
+}
+
+function resetText() {
+  $('#text-box').val('');
 }
 
  // Your Client ID can be retrieved from your project in the Google
