@@ -68,18 +68,23 @@ function highlight_green(selection) {
 function tab() {
 	// if($(".nicEdit-main").is(":focus")) {
 		console.log("yay");
-    $(this).keypress(function(e){
-     console.log(e.which);
-     if(e.which===96){
-       console.log("tab");
-       $(".nicEdit-main").find("li").last().append("<ul> <li></li></ul>");
-     }
-     if(e.which===49){
-       console.log("tab");
-       $(".nicEdit-main").find("li").last().remove();
-       $(".nicEdit-main").find("li").last().append("<li>");
-     }
-   });
+
+ 
+	  	$(this).keypress(function(e){
+	  		console.log(e.which);
+	      	if(e.which===96){
+	      		console.log("tab");
+	      		$(".nicEdit-main").find("li").last().append("<ul> <li></li></ul>");
+	      		//$("<ul>").append(".nicEdit-main").find("li").last();
+
+	      	}
+	      	if(e.which===49){
+	      		console.log("tab");
+	      		$(".nicEdit-main").find("li").last().remove();
+	      		$(".nicEdit-main").find("li").last().append("<li>");
+	      	}
+	    });
+
 	// }
 }
 

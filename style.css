@@ -10,7 +10,9 @@
 	padding-bottom: 40px;
 	background-color: rgba(151, 255, 255, 0.4);
 }
-
+.mdl-layout-title{
+	color: white;
+}
 br {
 	line-height: 20px;
 }
