@@ -2,6 +2,8 @@
 <html>
 
 <head>
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="1052254226797-5pgje9r7epjv1j2grrm5kmtolr9pu862.apps.googleusercontent.com">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Heaps Of Fun</title>
@@ -118,6 +120,17 @@
 						Some Sample Text 
 					</textarea>
 					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "" value = "save to googledoc">
+					<!-- <input id="toGoogleDoc" type="button" value="Export To Google Docs" onclick="onSignIn(googleUser);">  -->
+					<button class="g-signin"
+						id = "googleDocButton" 
+						style = "visibility: hidden"
+	                    data-scope="https://www.googleapis.com/auth/drive"
+	                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+	                    data-clientId="1052254226797-5pgje9r7epjv1j2grrm5kmtolr9pu862.apps.googleusercontent.com"
+	                    data-theme="dark"
+	                    data-cookiepolicy="single_host_origin"> 
+	                </button>
+                
 					<input type="button" class="mdl-button mdl-js-button mdl-button--raised" onclick = "" value = "reset">
 				</div>
 			</div>
