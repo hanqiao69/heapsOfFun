@@ -36,7 +36,6 @@ function copySelectionText(){
     return copysuccess;
 }
 
-/*Small function wich create a sidebar(just to illustrate my point)*/
 var sidebarOpen = false;
 function toggleSidebar() {
 	if(sidebarOpen) {
