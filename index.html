@@ -132,5 +132,92 @@
 		</div>
 	</footer>
 </div>
+
+
+<script type="text/javascript">
+function handleClientLoad() {
+	console.log("HANDLE CLIENT LOAD");
+
+    window.setTimeout(checkAuth1,1);
+  }
+
+
+function submitform()
+{
+	document.getElementById("input-text").submit();
+}
+
+
+function createDoc() {
+	const boundary = '-------314159265358979323846';
+	const delimiter = "\r\n--" + boundary + "\r\n";
+	const close_delim = "\r\n--" + boundary + "--";
+
+    var metadata = JSON.stringify({
+		      "name" : "Heaps of Fun Document",
+		      "mimeType" : "application/rtf",
+		      "description" : "This is a test of creating a metafile",
+		      });
+    
+    //var snippet = document.getElementById("NicEditMain").value;
+    var snippet = '';
+    $( "#startList > li" ).each(function() {
+    	snippet+='\u2022 ';
+    	snippet+=$( this ).text();
+    	console.log($( this ).text());
+    	snippet+='\n';
+    	console.log("HI: " + snippet);
+    });
+    
+    console.log("SNIPPET: " + snippet);
+    
+    var bodyText = 
+    	delimiter +
+        'Content-Type: application/json\r\n\r\n' +
+        metadata +
+        delimiter +
+        'Content-Type: application/rtf\r\n' +
+        'Content-Length:' + snippet.length + '\r\n' +
+        '\r\n' +
+        snippet +
+        close_delim;
+    
+    console.log(bodyText);
+    
+	var request = gapi.client.request({
+		   'path': '/upload/drive/v3/files',
+		   'params' : {'uploadType': 'multipart'},
+		   'method': 'POST',
+		   'headers': {'Content-Type': 'multipart/mixed; boundary="' + boundary + '"'},
+		   'body': bodyText
+		   });
+
+ 	request.execute(function(resp){
+		console.log(resp);
+		window.confirm("sometext");
+	});
+	
+}
+
+function handleAuthResult(authResult) {
+	console.log(authResult);
+    var authorizeButton = document.getElementById('googleDocButton');
+    
+    if (!authResult || authResult.error) {
+      console.log("AUTH HAD ERROR");
+      authorizeButton.style.visibility = 'hidden';
+    } else {
+      authorizeButton.style.visibility = 'visible';
+      authorizeButton.onclick = createDoc;
+    }
+  }
+
+function checkAuth1() {
+	console.log("CHECK AUTH WAS CALLED");
+	gapi.auth.authorize({client_id: "1052254226797-5pgje9r7epjv1j2grrm5kmtolr9pu862.apps.googleusercontent.com", scope: ["https://www.googleapis.com/auth/drive"], immediate: true}, handleAuthResult);
+}	   
+
+</script>
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 </body>
 </html>
