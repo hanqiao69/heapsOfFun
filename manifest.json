@@ -1,0 +1,26 @@
+{
+  "name": "Heaps of Fun",
+  "version": "1.1",
+  "description": "Opens a side panel.",
+  "devtools_page": "devtools.html",
+  "manifest_version": 2,
+  "background": {
+		"page": "background.html"
+	},
+  "page_action": {
+		"default_icon": "icon.png",
+		"default_title": "Inject sidebar"
+	},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+			"js": ["jquery-1.12.0.min.js", "script.js", "selection.js", "panel.js", "panel2.js", "nic.js", "jquery.min.js"]
+    }
+  ],
+  "permissions": [
+   "tabs"
+   ],
+   "web_accessible_resources": ["panel.html"],
+   "content_security_policy": "script-src 'self' ; object-src 'self'"
+
+}
